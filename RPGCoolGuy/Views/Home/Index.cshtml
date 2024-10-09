@@ -1,0 +1,22 @@
+﻿@model List<Character>;
+@{
+    ViewData["Title"] = "Home Page";
+}
+<h2 style="text-align:center;">Character Battles</h2>
+<hr />
+<br />
+@foreach(Character c in Model)
+{
+    <p>
+        @c.Name
+        @c.Attack
+        @c.Defense
+        @c.HP
+        <a asp-route-id="@c.Id" asp-action="Edit">Edit</a>
+        <a asp-route-id="@c.Id" asp-action="Delete">Delete</a>
+    </p>
+
+}
+<a asp-action="Add">Click here to add a character</a>
+<br />
+<a asp-action="Fight">Click here to FIGHT!!!</a>
